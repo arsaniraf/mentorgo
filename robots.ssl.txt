@@ -1,0 +1,37 @@
+User-agent: *
+Disallow: /cgi-bin
+Disallow: /*?
+Disallow: /feed/
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search/
+Disallow: *?attachment_id=
+Disallow: */rss
+Disallow: */embed
+Disallow: /vacancy/?*
+Disallow: /wp-admin
+Disallow: /wp-includes
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+Disallow: */wlwmanifest.xml
+Disallow: /xmlrpc.php
+Disallow: */answer
+Disallow: *openstat=
+Disallow: */trackback
+Disallow: /users/
+Disallow: /*?filter=*
+Disallow: /wp-content/ebooks/
+Disallow: /wp-content/files/
+Disallow: /wp-content/images-disallow/
+Disallow: /wp-content/uploads/ebooks/
+Disallow: /wp-content/uploads/files/
+Disallow: /wp-content/uploads/images-disallow/
+Disallow: /cdn-cgi/*
+
+Allow: /?post_type=portfolio*
+Allow: */embedded
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-includes/*.css
+Allow: /wp-includes/*.js
+
+Sitemap: https://mobilunity.com/sitemap.xml
