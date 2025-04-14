@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+  <rect x="2.5" y="6.5" width="15" height="23" stroke="#18232B"></rect>
+  <path d="M5 13H14" stroke="#18232B"></path>
+  <path d="M5 16H14" stroke="#18232B"></path>
+  <path d="M5 19H14" stroke="#18232B"></path>
+  <path d="M5 22H14" stroke="#18232B"></path>
+  <rect x="17.5" y="6.5" width="16" height="23" stroke="#18232B"></rect>
+  <path d="M22 13H31" stroke="#18232B"></path>
+  <path d="M22 16H31" stroke="#18232B"></path>
+  <path d="M22 19H31" stroke="#18232B"></path>
+  <path d="M22 22H31" stroke="#18232B"></path>
+</svg>
