@@ -1649,9 +1649,188 @@ var paramsObject = {"templateUrl":"https:\/\/mobilunity.com\/wp-content\/themes\
 	</div>
 </div></div>
 
-<div class="simple-btn" style="text-align:center">
-	<a href="#form-contact-us" class="btn btn-link btn-arrow btn-blue" target="_blank" data-wpel-link="internal">
-		Download Our Company Profile</a>
+<div class="simple-btn">
+	<a href="javascript:void(0)" class="btn btn btn-yellow btn-arrow" onclick="openContactFormPopup()">
+	<span>Get in Touch</span>
+	</a>
+</div>
+
+<!-- Popup Modal -->
+<div id="contactFormPopup" class="popup-modal" style="display: none;">
+	<div class="popup-content">
+	<span class="close-btn" onclick="closeContactFormPopup()">&times;</span>
+	<h4 class="section-title has-white-color has-text-color has-link-color">Download Our Company Profile</h4>
+	<p class="section-text has-text-color has-link-color wp-elements-c96d596fa50b6972d6de6c8773d1ecc3" style="color:#ffffffcc">Fill the form below to download.</p>
+
+	<form id="popupContactForm" onsubmit="handleFormSubmit(event)" class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+		<label for="name" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="text" id="name" name="name" placeholder="Enter your name" required>
+		<label for="phone" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+		<label for="email" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="email" id="email" name="email" placeholder="Enter your email" required>
+		<button type="submit" id="submitButton" class="btn btn btn-yellow btn-arrow" disabled>Submit</button>
+	</form>
+	</div>
+	</div>
+
+	<script>
+		function openContactFormPopup() {
+			document.getElementById('contactFormPopup').style.display = 'flex';
+		}
+
+		function closeContactFormPopup() {
+			document.getElementById('contactFormPopup').style.display = 'none';
+		}
+
+		async function handleFormSubmit(event) {
+			event.preventDefault();
+			const name = document.getElementById('name').value;
+			const phone = document.getElementById('phone').value;
+			const email = document.getElementById('email').value;
+
+			// Simulate online verification
+			const isValid = await verifyFormData(name, phone, email);
+			if (isValid) {
+				alert('Thank you for reaching out! Your form has been submitted.');
+				closeContactFormPopup();
+			} else {
+				alert('Verification failed. Please check your details and try again.');
+			}
+		}
+
+		async function verifyFormData(name, phone, email) {
+			// Simulate an API call for verification
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					// Example: Basic validation logic
+					const isValid = name && phone && email.includes('@');
+					resolve(isValid);
+				}, 1000);
+			});
+		}
+
+		function toggleSubmitButton() {
+			const name = document.getElementById('name').value.trim();
+			const phone = document.getElementById('phone').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const submitButton = document.getElementById('submitButton');
+
+			if (name && phone && email.includes('@')) {
+				submitButton.disabled = false;
+			} else {
+				submitButton.disabled = true;
+			}
+		}
+
+		document.getElementById('name').addEventListener('input', toggleSubmitButton);
+		document.getElementById('phone').addEventListener('input', toggleSubmitButton);
+		document.getElementById('email').addEventListener('input', toggleSubmitButton);
+	</script>
+
+	<style>
+		.popup-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(24, 35, 43, 0.9);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1000;
+			animation: fadeIn 0.3s ease-in-out;
+		}
+
+		.popup-content {
+			background-color: #18232b;
+			padding: 30px;
+			border-radius: 12px;
+			width: 90%;
+			max-width: 500px;
+			position: relative;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			animation: slideIn 0.4s ease-in-out;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			font-size: 24px;
+			cursor: pointer;
+			color: #ffffffcc;
+			transition: color 0.3s;
+		}
+
+		.close-btn:hover {
+			color: #ffffff;
+		}
+
+		form label {
+			display: block;
+			margin: 15px 0 5px;
+			font-weight: bold;
+			color: #ffffffcc;
+		}
+
+		form input {
+			width: 100%;
+			padding: 12px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			font-size: 16px;
+			background-color: #2f404f;
+			color: #ffffffcc;
+			transition: border-color 0.3s;
+		}
+
+		form input:focus {
+			border-color: #15b3fc;
+			outline: none;
+		}
+
+		form button {
+			background-color: #15b3fc;
+			color: #ffffff;
+			padding: 12px 25px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: background-color 0.3s;
+		}
+
+		form button:disabled {
+			background-color: #7a7a7a;
+			cursor: not-allowed;
+		}
+
+		form button:hover:enabled {
+			background-color: #15b3fc;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateY(-50px);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+	</style>
 </div>
 </div></section>
 
