@@ -422,6 +422,213 @@ var paramsObject = {"templateUrl":"https:\/\/mobilunity.com\/wp-content\/themes\
 
 
 <div class="wp-block-uagb-info-box uagb-block-23057e0c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" target="_blank" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" target="_blank" rel="noopener" title="GIS" data-wpel-link="internal">GIS</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+
+
+<div class="simple-btn has-text-align-center">
+	<a href="javascript:void(0)" class="btn btn-link btn-arrow btn-blue" onclick="openContactFormPopup()">
+	<span>Get Our Company Profile</span>
+	</a>
+</div>
+<div></div>
+
+<!-- Popup Modal -->
+<div id="contactFormPopup" class="popup-modal" style="display: none;">
+	<div class="popup-content">
+	<span class="close-btn" onclick="closeContactFormPopup()">&times;</span>
+	<h4 class="section-title has-white-color has-text-color has-link-color">Company Profile</h4>
+	<p class="section-text has-text-color has-link-color wp-elements-c96d596fa50b6972d6de6c8773d1ecc3" style="color:#ffffffcc">Fill the form below to download.</p>
+	<div></div>
+
+	<form id="popupContactForm" onsubmit="handleFormSubmit(event)" class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+		<label for="name" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="text" id="name" name="name" placeholder="Enter your name" required>
+		<label for="phone" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+		<label for="email" class="section-text has-text-color has-link-color" style="color:#ffffffcc"></label>
+		<input type="email" id="email" name="email" placeholder="Enter your email" required>
+		<button type="submit" id="blog-request" class="button submit-button" disabled>Submit</button>
+	</form>
+
+	<script>
+		function toggleSubmitButton() {
+			const name = document.getElementById('name').value.trim();
+			const phone = document.getElementById('phone').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const submitButton = document.getElementById('blog-request');
+
+			if (name && phone && email.includes('@')) {
+				submitButton.disabled = false;
+				submitButton.style.backgroundColor = '#ffd800'; // Change button color
+				submitButton.style.cursor = 'pointer';
+			} else {
+				submitButton.disabled = true;
+				submitButton.style.backgroundColor = '#7a7a7a'; // Reset button color
+				submitButton.style.cursor = 'not-allowed';
+			}
+		}
+
+		async function handleFormSubmit(event) {
+			event.preventDefault();
+			const name = document.getElementById('name').value;
+			const phone = document.getElementById('phone').value;
+			const email = document.getElementById('email').value;
+
+			try {
+				// Simulate online verification
+				const isValid = await verifyFormData(name, phone, email);
+				if (isValid) {
+					alert('Thank you for reaching out! Your form has been submitted.');
+					closeContactFormPopup();
+
+					// Trigger PDF download
+					const link = document.createElement('a');
+					link.href = 'https://arsaniraf.github.io/mentorgo/wp-content/uploads/2023/01/pafin-case-study.pdf'; // Corrected path to the PDF file
+					link.download = 'pafin-case-study.pdf'; // Set the desired file name
+					link.click();
+				} else {
+					alert('Verification failed. Please check your details and try again.');
+				}
+			} catch (error) {
+				alert('An error occurred during verification. Please try again later.');
+				console.error('Verification error:', error);
+			}
+		}
+
+		async function verifyFormData(name, phone, email) {
+			// Simulate an API call for verification
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					// Example: Basic validation logic
+					const isValid = name && phone && email.includes('@');
+					if (isValid) {
+						resolve(true);
+					} else {
+						resolve(false);
+					}
+				}, 1000);
+			});
+		}
+
+		document.getElementById('name').addEventListener('input', toggleSubmitButton);
+		document.getElementById('phone').addEventListener('input', toggleSubmitButton);
+		document.getElementById('email').addEventListener('input', toggleSubmitButton);
+	</script>
+	</div>
+	</div>
+
+	<script>
+		function openContactFormPopup() {
+			document.getElementById('contactFormPopup').style.display = 'flex';
+		}
+
+		function closeContactFormPopup() {
+			document.getElementById('contactFormPopup').style.display = 'none';
+		}
+	</script>
+
+	<style>
+		.popup-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(24, 35, 43, 0.9);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1000;
+			animation: fadeIn 0.3s ease-in-out;
+		}
+
+		.popup-content {
+			background-color: #18232b;
+			padding: 30px;
+			border-radius: 12px;
+			width: 90%;
+			max-width: 500px;
+			position: relative;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			animation: slideIn 0.4s ease-in-out;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			font-size: 24px;
+			cursor: pointer;
+			color: #ffffffcc;
+			transition: color 0.3s;
+		}
+
+		.close-btn:hover {
+			color: #ffffff;
+		}
+
+		form label {
+			display: block;
+			margin: 15px 0 5px;
+			font-weight: bold;
+			color: #ffffffcc;
+		}
+
+		form input {
+			width: 100%;
+			padding: 12px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			font-size: 16px;
+			background-color: #2f404f;
+			color: #ffffffcc;
+			transition: border-color 0.3s;
+		}
+
+		form input:focus {
+			border-color: #15b3fc;
+			outline: none;
+		}
+
+		form button {
+			background-color: #15b3fc;
+			color: #ffffff;
+			padding: 12px 25px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: background-color 0.3s;
+		}
+
+		form button:disabled {
+			background-color: #7a7a7a;
+			cursor: not-allowed;
+		}
+
+		form button:hover:enabled {
+			background-color: #15b3fc;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateY(-50px);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+	</style>
 	</div></div>
 </div></section>
 
