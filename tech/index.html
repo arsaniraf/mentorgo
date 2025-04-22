@@ -376,59 +376,321 @@ var paramsObject = {"templateUrl":"https:\/\/mobilunity.com\/wp-content\/themes\
 
 <div class="wp-block-group tech-experts-industries tech-experts-industries-light"><div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
 	
-	<div class="wp-block-uagb-info-box uagb-block-b33ec6af uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-fin-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-fin-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Fintech &amp; Finance" data-wpel-link="internal">MentorAds</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-b33ec6af uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="openPopupAds();" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-fin-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-fin-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Fintech &amp; Finance" data-wpel-link="internal">MentorAds</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	
+			<script>
+				function openPopupAds() {
+					const popup = document.createElement("div");
+					popup.style.position = "fixed";
+					popup.style.top = "50%";
+					popup.style.left = "50%";
+					popup.style.transform = "translate(-50%, -50%)";
+					popup.style.width = "400px";
+					popup.style.backgroundColor = "#fff";
+					popup.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+					popup.style.borderRadius = "8px";
+					popup.style.padding = "20px";
+					popup.style.zIndex = "1000";
+					popup.style.opacity = "0";
+					popup.style.transition = "opacity 0.3s ease";
+					popup.innerHTML = `
+						<h2 style="color: var(--dark-bg, #18232b); font-size: 1.75em; font-weight: 800; margin-bottom: 15px;">Fintech & Finance</h2>
+						<p style="color: #6d6d6d; font-size: 1em; line-height: 1.6; margin-bottom: 20px;">Explore the innovative solutions and expertise we bring to the Fintech & Finance industry:</p>
+						<ul style="list-style-type: circle; padding-left: 20px; color: #6d6d6d; font-size: 1em; line-height: 1.6; margin-bottom: 20px;">
+							<li>Custom financial software development</li>
+							<li>Secure payment gateway integration</li>
+							<li>Data analytics and reporting tools</li>
+						</ul>
+						<a href="#form-contact-us" class="btn btn btn-arrow btn-yellow" style="display: inline-block; padding: 10px 20px; background-color: #ffd800; color: #18232b; text-decoration: none; font-weight: bold; border-radius: 25px; text-align: center;" onclick="closePopup(this)">Get Our Company Profile</a>
+						<span style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.5em; color: #6d6d6d;" onclick="closePopup(this)">&times;</span>
+					`;
+					document.body.appendChild(popup);
+			
+					const overlay = document.createElement("div");
+					overlay.style.position = "fixed";
+					overlay.style.top = "0";
+					overlay.style.left = "0";
+					overlay.style.width = "100%";
+					overlay.style.height = "100%";
+					overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+					overlay.style.zIndex = "999";
+					overlay.style.opacity = "0";
+					overlay.style.transition = "opacity 0.3s ease";
+					overlay.onclick = () => closePopup(popup);
+					document.body.appendChild(overlay);
+			
+					// Trigger fade-in effect
+					setTimeout(() => {
+						popup.style.opacity = "1";
+						overlay.style.opacity = "1";
+					}, 10);
+				}
+			
+				function closePopup() {
+					const popupElement = document.querySelector("div[style*='translate(-50%, -50%)']");
+					const overlay = document.querySelector("div[style*='rgba(0, 0, 0, 0.5)']");
+					if (popupElement) popupElement.style.opacity = "0";
+					if (overlay) overlay.style.opacity = "0";
+			
+					// Remove elements after fade-out
+					setTimeout(() => {
+						if (popupElement) document.body.removeChild(popupElement);
+						if (overlay) document.body.removeChild(overlay);
+					}, 300);
+				}
+			</script>
+
+	
+	<div class="wp-block-uagb-info-box uagb-block-c39e4fe8 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="openPopupArc();" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-e-commerce-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-e-commerce-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="E-commerce" data-wpel-link="internal">MentorArc</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	
+			<script>
+				function openPopupArc() {
+					const popup = document.createElement("div");
+					popup.style.position = "fixed";
+					popup.style.top = "50%";
+					popup.style.left = "50%";
+					popup.style.transform = "translate(-50%, -50%)";
+					popup.style.width = "400px";
+					popup.style.backgroundColor = "#fff";
+					popup.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+					popup.style.borderRadius = "8px";
+					popup.style.padding = "20px";
+					popup.style.zIndex = "1000";
+					popup.style.opacity = "0";
+					popup.style.transition = "opacity 0.3s ease";
+					popup.innerHTML = `
+						<h2 style="color: var(--dark-bg, #18232b); font-size: 1.75em; font-weight: 800; margin-bottom: 15px;">Fintech & Finance</h2>
+						<p style="color: #6d6d6d; font-size: 1em; line-height: 1.6; margin-bottom: 20px;">Explore the innovative solutions and expertise we bring to the Fintech & Finance industry:</p>
+						<ul style="list-style-type: circle; padding-left: 20px; color: #6d6d6d; font-size: 1em; line-height: 1.6; margin-bottom: 20px;">
+							<li>Custom financial software development</li>
+							<li>Secure payment gateway integration</li>
+							<li>Data analytics and reporting tools</li>
+						</ul>
+						<a href="#form-contact-us" class="btn btn btn-arrow btn-yellow" style="display: inline-block; padding: 10px 20px; background-color: #ffd800; color: #18232b; text-decoration: none; font-weight: bold; border-radius: 25px; text-align: center;" onclick="closePopup(this)">Get Our Company Profile</a>
+						<span style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.5em; color: #6d6d6d;" onclick="closePopup(this)">&times;</span>
+					`;
+					document.body.appendChild(popup);
+			
+					const overlay = document.createElement("div");
+					overlay.style.position = "fixed";
+					overlay.style.top = "0";
+					overlay.style.left = "0";
+					overlay.style.width = "100%";
+					overlay.style.height = "100%";
+					overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+					overlay.style.zIndex = "999";
+					overlay.style.opacity = "0";
+					overlay.style.transition = "opacity 0.3s ease";
+					overlay.onclick = () => closePopup(popup);
+					document.body.appendChild(overlay);
+			
+					// Trigger fade-in effect
+					setTimeout(() => {
+						popup.style.opacity = "1";
+						overlay.style.opacity = "1";
+					}, 10);
+				}
+			
+				function closePopup() {
+					const popupElement = document.querySelector("div[style*='translate(-50%, -50%)']");
+					const overlay = document.querySelector("div[style*='rgba(0, 0, 0, 0.5)']");
+					if (popupElement) popupElement.style.opacity = "0";
+					if (overlay) overlay.style.opacity = "0";
+			
+					// Remove elements after fade-out
+					setTimeout(() => {
+						if (popupElement) document.body.removeChild(popupElement);
+						if (overlay) document.body.removeChild(overlay);
+					}, 300);
+				}
+			</script>
+
+	
+	<div class="wp-block-uagb-info-box uagb-block-a239727c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-insurtech-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-insurtech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Insurtech" data-wpel-link="internal">MentorDev</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-c39e4fe8 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-e-commerce-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-e-commerce-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="E-commerce" data-wpel-link="internal">MentorArc</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-9bc375d9 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-real-estate-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-real-estate-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Real Estate &amp; Proptech" data-wpel-link="internal">MentorRealty</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-a239727c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-insurtech-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-insurtech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Insurtech" data-wpel-link="internal">MentorDev</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-8b4886ae uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-e-learning-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-e-learning-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="E-learning &amp; Education" data-wpel-link="internal">MentorTrip</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-9bc375d9 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-real-estate-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-real-estate-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Real Estate &amp; Proptech" data-wpel-link="internal">MentorRealty</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-5c0c8c96 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-travel-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-travel-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Travel &amp; Hospitality" data-wpel-link="internal">MentorCare</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-8b4886ae uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-e-learning-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-e-learning-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="E-learning &amp; Education" data-wpel-link="internal">MentorTrip</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-580df961 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-logistics-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-logistics-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Logistics" data-wpel-link="internal">MentorFix</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-5c0c8c96 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-travel-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-travel-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Travel &amp; Hospitality" data-wpel-link="internal">MentorCare</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-3f596ec3 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-retail-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-retail-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Retail" data-wpel-link="internal">MentorOps</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-580df961 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-logistics-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-logistics-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Logistics" data-wpel-link="internal">MentorFix</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-fbf93f44 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-media-d.svg" alt="" width="120" height="116" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-media-d.svg" alt="" width="120" height="116" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Media &amp; Entertaiment" data-wpel-link="internal">MentorMart</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-3f596ec3 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-retail-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-retail-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Retail" data-wpel-link="internal">MentorOps</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-89538767 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-foodtech-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-foodtech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Foodtech &amp; Restaurant" data-wpel-link="internal">MentorEat</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-fbf93f44 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-media-d.svg" alt="" width="120" height="116" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-media-d.svg" alt="" width="120" height="116" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Media &amp; Entertaiment" data-wpel-link="internal">MentorMart</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-d8a1a48c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-agritech-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-agritech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="AgriTech" data-wpel-link="internal">MentorTrans</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-89538767 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-foodtech-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-foodtech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Foodtech &amp; Restaurant" data-wpel-link="internal">MentorEat</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-93c02b41 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-marketing-d.svg" alt="" width="120" height="120" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-marketing-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Marketing &amp; Advertising" data-wpel-link="internal">MentorLog</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 	
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-d8a1a48c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-agritech-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-agritech-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="AgriTech" data-wpel-link="internal">MentorTrans</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
-	
-	
-	
-	<div class="wp-block-uagb-info-box uagb-block-93c02b41 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-marketing-d.svg" alt="" width="120" height="120" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-marketing-d.svg" alt="" width="120" height="120" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="Marketing &amp; Advertising" data-wpel-link="internal">MentorLog</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
-	
-	
-	
-	<div class="wp-block-uagb-info-box uagb-block-23057e0c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="GIS" data-wpel-link="internal">MentorEco</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-23057e0c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="GIS" data-wpel-link="internal">MentorEco</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 
 	
 	
-	<div class="wp-block-uagb-info-box uagb-block-23057e0c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item"><a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a><div class="uagb-ifb-content"><div class="uagb-ifb-image-content"><img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/><noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/></noscript></div><div class="uagb-ifb-title-wrap"><p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="GIS" data-wpel-link="internal">MentorEdu</a></p></div><div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
+	<div class="wp-block-uagb-info-box uagb-block-23057e0c uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-above-title uagb-infobox-image-valign-top industry-experts-item">
+		<a href="javascript:void(0)" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label="Infobox Link" rel="noopener noreferrer" onclick="return true;" data-wpel-link="internal"></a>
+		<div class="uagb-ifb-content">
+			<div class="uagb-ifb-image-content">
+				<img class="lazy lazy-hidden" decoding="async" src="../wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/>
+				<noscript><img decoding="async" src="../wp-content/uploads/2024/10/indstr-gis-d.svg" alt="" width="120" height="123" loading="lazy"/></noscript>
+			</div>
+			<div class="uagb-ifb-title-wrap">
+				<p class="uagb-ifb-title"><a href="javascript:void(0)" rel="noopener" title="GIS" data-wpel-link="internal">MentorEdu</a></p>
+			</div>
+			<div class="uagb-ifb-button-wrapper wp-block-button"></div></div></div>
 </div></div>
 </div>
 </div></section>
